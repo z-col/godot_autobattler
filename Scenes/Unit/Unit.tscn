@@ -33,7 +33,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.34594953, 0.04114125, 0.1084592, 1)
 
-[node name="Unit" type="Area2D"]
+[node name="Unit" type="Area2D" groups=["units"]]
 script = ExtResource("1_2x7x1")
 state = ExtResource("2_lpqta")
 metadata/_edit_group_ = true
