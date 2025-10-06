@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="UnitsState" load_steps=2 format=3 uid="uid://b5lk1wyo4fkxn"]
+
+[ext_resource type="Script" uid="uid://cb22ym0865rew" path="res://Data/Units/UnitsState.gd" id="1_bs4mq"]
+
+[resource]
+script = ExtResource("1_bs4mq")
+name = "Robin"
+skin_coordinates = Vector2i(2, 0)
+metadata/_custom_type_script = "uid://cb22ym0865rew"

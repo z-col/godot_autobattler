@@ -1,3 +1,23 @@
+# UnitMover 类用于管理单位的拖拽、放置和移动逻辑。
+# 
+# 功能：
+# - 监听单位的拖拽事件（开始、取消、结束）。
+# - 根据拖拽操作动态更新单位的位置。
+# - 确保单位只能放置在有效的区域内，并处理目标格子被占用的情况。
+# - 提供高亮显示功能，提示可放置的区域。
+# 
+# 属性：
+# - play_areas: 存储所有可用的 PlayArea 区域。
+# 
+# 方法：
+# - setup_unit: 为单位绑定拖拽相关的信号。
+# - _set_highlighter: 启用或禁用所有 PlayArea 的高亮显示。
+# - _get_play_area_for_position: 根据全局坐标获取对应的 PlayArea 索引。
+# - _reset_unit_to_starting_position: 将单位重置到起始位置。
+# - _move_unit: 将单位移动到指定的 PlayArea 和格子。
+# - _on_unit_drag_started: 处理单位拖拽开始时的逻辑。
+# - _on_unit_drag_canceled: 处理单位拖拽取消时的逻辑。
+# - _on_unit_dropped: 处理单位拖拽结束时的逻辑。
 class_name UnitMover extends Node
 
 
