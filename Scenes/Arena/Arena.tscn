@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dl6tr34sphqob"]
+[gd_scene load_steps=17 format=4 uid="uid://dl6tr34sphqob"]
 
 [ext_resource type="Script" uid="uid://3wm14l2l57j3" path="res://Scenes/Arena/Arena.gd" id="1_2fwkt"]
 [ext_resource type="TileSet" uid="uid://jn1pi6cfsdt5" path="res://Scenes/Arena/TileSet.tres" id="1_lh3uc"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://c3xbdeb7rqpeh" path="res://Components/UnitMover.gd" id="8_wcn2d"]
 [ext_resource type="Resource" uid="uid://b5lk1wyo4fkxn" path="res://Data/Units/Robin.tres" id="9_ramf0"]
 [ext_resource type="Script" uid="uid://drm16toxoskm0" path="res://Components/UnitSpawner.gd" id="11_8qqbc"]
+[ext_resource type="PackedScene" uid="uid://c25sttp3j4nqv" path="res://Scenes/SellPortal/SellPortal.tscn" id="12_vjiyp"]
+[ext_resource type="Resource" uid="uid://dsyfeq7hyv7xw" path="res://Data/Player/PlayerStats.tres" id="13_4r4ii"]
 
 [sub_resource type="Curve" id="Curve_mugxw"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.22530864, 0.99500763), 0.0, 0.0, 0, 0, Vector2(0.8333333, 0.99999994), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -134,3 +136,7 @@ play_areas = [NodePath("../GameArea"), NodePath("../Bench")]
 script = ExtResource("11_8qqbc")
 bench = NodePath("../Bench")
 game_area = NodePath("../GameArea")
+
+[node name="SellPortal" parent="." instance=ExtResource("12_vjiyp")]
+position = Vector2(80, 288)
+player_stats = ExtResource("13_4r4ii")
