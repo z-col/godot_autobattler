@@ -5,5 +5,7 @@
 [resource]
 script = ExtResource("1_urb3h")
 name = "Bjorn"
+rarity = 1
+gold_cost = 2
 skin_coordinates = Vector2i(1, 3)
 metadata/_custom_type_script = "uid://cb22ym0865rew"
