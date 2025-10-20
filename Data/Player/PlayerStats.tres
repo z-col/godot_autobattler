@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_odl77")
 gold = 50
+level = 1
 metadata/_custom_type_script = "uid://fc0stouf8sys"

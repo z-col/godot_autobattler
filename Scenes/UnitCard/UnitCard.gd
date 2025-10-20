@@ -1,4 +1,4 @@
-# UnitCard 类用于实现商店单位卡牌的交互和展示。
+## UnitCard 类用于实现商店单位卡牌的交互和展示。
 # 
 # 功能：
 # - 展示单位的名称、稀有度、价格、图标等信息。
@@ -48,11 +48,6 @@ var border_color: Color
 func _ready() -> void:
 	player_stats.changed.connect(_on_player_stats_changed)
 	_on_player_stats_changed()
-	unit_bought.connect(
-		func(unit: UnitsState):
-			print("bought unit: ", unit)
-			print("gold: ", player_stats.gold)
-	)
 
 func _set_unit_stats(value: UnitsState) -> void:
 	unit_stats = value

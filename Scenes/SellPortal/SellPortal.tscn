@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c25sttp3j4nqv"]
+[gd_scene load_steps=10 format=3 uid="uid://c25sttp3j4nqv"]
 
 [ext_resource type="Script" uid="uid://pvt1skwcqx4y" path="res://Scenes/SellPortal/SellPortal.gd" id="1_pfe3o"]
 [ext_resource type="Material" uid="uid://bb8m5fhpi4wqn" path="res://assets/shaders/2d_outline_shader.tres" id="1_spe07"]
 [ext_resource type="Texture2D" uid="uid://b1ro1ssup7dcp" path="res://assets/sprites/tiles.png" id="2_o13qi"]
+[ext_resource type="Resource" uid="uid://dekj620mdhlig" path="res://Data/UnitPool/UnitPool.tres" id="2_uemwi"]
 [ext_resource type="Script" uid="uid://blquih6dsyq4c" path="res://Components/OutlineHighlighter.gd" id="3_pfe3o"]
+[ext_resource type="Resource" uid="uid://dsyfeq7hyv7xw" path="res://Data/Player/PlayerStats.tres" id="3_wogcq"]
 [ext_resource type="Texture2D" uid="uid://c4awhqfup7o2k" path="res://assets/sprites/gold.png" id="4_o13qi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xasou"]
@@ -15,6 +17,8 @@ shadow_color = Color(0, 0, 0, 0.39607844)
 
 [node name="SellPortal" type="Area2D"]
 script = ExtResource("1_pfe3o")
+unit_pool = ExtResource("2_uemwi")
+player_stats = ExtResource("3_wogcq")
 
 [node name="Visuals" type="CanvasGroup" parent="."]
 material = ExtResource("1_spe07")

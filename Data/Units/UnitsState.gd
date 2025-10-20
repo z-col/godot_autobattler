@@ -1,4 +1,4 @@
-# UnitsState 类用于描述自走棋单位的基础属性和状态。
+## UnitsState 类用于描述自走棋单位的基础属性和状态。
 # 
 # 功能：
 # - 存储单位的名称、稀有度、价格、星级、皮肤坐标等数据。
@@ -11,6 +11,7 @@
 # - gold_cost: 单位基础价格。
 # - tier: 单位星级（1~3星）。
 # - skin_coordinates: 单位皮肤在图集中的坐标。
+# - pool_count: 单位在池中的数量。
 # 
 # 主要方法：
 # - get_combined_unit_count: 计算合成当前星级单位所需的基础单位数量。
@@ -33,13 +34,14 @@ const RARITY_COLORS = {
 
 @export var name: String
 
-@export_category("Data")
-@export var rarity: Rarity
-@export var gold_cost: int = 1
-@export_range(1, 3) var tier: int = 1: set = _set_tier
+@export_category("Data") ## 单位名称。
+@export var rarity: Rarity ## 单位稀有度（枚举类型）。
+@export var gold_cost: int = 1 ## 单位基础价格。
+@export_range(1, 3) var tier: int = 1: set = _set_tier ## 单位星级（1~3星）。
+@export var pool_count: int = 5 ## 单位在池中的数量。
 
 @export_category("Visuals")
-@export var skin_coordinates: Vector2i
+@export var skin_coordinates: Vector2i ## 单位皮肤在图集中的坐标。
 
 func get_combined_unit_count() -> int:
 	return 3 ** (tier - 1)
