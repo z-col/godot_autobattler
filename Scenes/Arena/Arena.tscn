@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dl6tr34sphqob"]
+[gd_scene load_steps=17 format=4 uid="uid://dl6tr34sphqob"]
 
 [ext_resource type="Script" uid="uid://3wm14l2l57j3" path="res://Scenes/Arena/Arena.gd" id="1_2fwkt"]
 [ext_resource type="TileSet" uid="uid://jn1pi6cfsdt5" path="res://Scenes/Arena/TileSet.tres" id="1_lh3uc"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bqofbpnw3luvf" path="res://Scenes/Unit/Unit.tscn" id="4_fl7xt"]
 [ext_resource type="Script" uid="uid://dp0lhjdh3imff" path="res://Components/PlayArea.gd" id="4_ner4r"]
 [ext_resource type="Script" uid="uid://dqg6ly0laovvd" path="res://Components/TileHighlighter.gd" id="6_csujq"]
-[ext_resource type="Resource" uid="uid://c7vbpjgq3nhmk" path="res://Data/Units/Arthur.tres" id="8_bga1v"]
 [ext_resource type="Script" uid="uid://c3xbdeb7rqpeh" path="res://Components/UnitMover.gd" id="8_wcn2d"]
 [ext_resource type="Resource" uid="uid://bw1etn7y42nqm" path="res://Data/Units/Bjorn_test.tres" id="9_iyhve"]
 [ext_resource type="Resource" uid="uid://b5lk1wyo4fkxn" path="res://Data/Units/Robin.tres" id="9_ramf0"]
@@ -95,6 +94,14 @@ play_area = NodePath("..")
 highlight_layer = NodePath("../HighLight")
 tile = Vector2i(3, 0)
 
+[node name="Unit" parent="GameArea" instance=ExtResource("4_fl7xt")]
+position = Vector2(64, 96)
+state = ExtResource("9_iyhve")
+
+[node name="Unit2" parent="GameArea" instance=ExtResource("4_fl7xt")]
+position = Vector2(32, 96)
+state = ExtResource("9_ramf0")
+
 [node name="Bench" type="TileMapLayer" parent="." node_paths=PackedStringArray("unit_grid", "tile_highlighter")]
 position = Vector2(160, 320)
 tile_map_data = PackedByteArray("AAAAAAAAAAAAAAsAAAABAAAAAAAAAAcAAAACAAAAAAAAAAsAAAADAAAAAAAAAAcAAAAEAAAAAAAAAAsAAAAFAAAAAAAAAAcAAAAGAAAAAAAAAAsAAAAHAAAAAAAAAAcAAAAIAAAAAAAAAAsAAAAJAAAAAAAAAAcAAAA=")
@@ -118,17 +125,6 @@ enabled = false
 play_area = NodePath("..")
 highlight_layer = NodePath("../HighLight")
 tile = Vector2i(3, 0)
-
-[node name="Unit" parent="Bench" instance=ExtResource("4_fl7xt")]
-state = ExtResource("8_bga1v")
-
-[node name="Unit" parent="." instance=ExtResource("4_fl7xt")]
-position = Vector2(224, 128)
-state = ExtResource("9_iyhve")
-
-[node name="Unit2" parent="." instance=ExtResource("4_fl7xt")]
-position = Vector2(192, 128)
-state = ExtResource("9_ramf0")
 
 [node name="UnitMover" type="Node" parent="." node_paths=PackedStringArray("play_areas")]
 script = ExtResource("8_wcn2d")
