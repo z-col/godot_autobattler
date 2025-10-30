@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://bqofbpnw3luvf"]
+[gd_scene load_steps=15 format=3 uid="uid://bqofbpnw3luvf"]
 
 [ext_resource type="Script" uid="uid://bgpwkyo7mqlde" path="res://Scenes/Unit/Unit.gd" id="1_2x7x1"]
 [ext_resource type="Texture2D" uid="uid://cx1ivjobggp8n" path="res://assets/sprites/rogues.png" id="1_h2qe3"]
 [ext_resource type="Resource" uid="uid://ia7k5knsmpht" path="res://Data/Units/Bjorn.tres" id="2_lpqta"]
 [ext_resource type="Material" uid="uid://bb8m5fhpi4wqn" path="res://assets/shaders/2d_outline_shader.tres" id="3_jeoki"]
 [ext_resource type="Script" uid="uid://qlf2wu1uqkob" path="res://Components/DragAndDrop.gd" id="4_jx7uk"]
+[ext_resource type="PackedScene" uid="uid://yfisd36s5q8t" path="res://Scenes/TierIcon/TierIcon.tscn" id="5_5j70n"]
 [ext_resource type="Script" uid="uid://d0tumjr2bffm" path="res://Components/VelocityBasedRotation.gd" id="5_wolxi"]
 [ext_resource type="Script" uid="uid://blquih6dsyq4c" path="res://Components/OutlineHighlighter.gd" id="7_2wu3i"]
+[ext_resource type="Script" uid="uid://snmdf4qx8qyo" path="res://Components/UnitAnimations.gd" id="9_u5g62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2qe3"]
 size = Vector2(36, 36)
@@ -73,6 +75,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_jx7uk")
 value = 75.0
 show_percentage = false
 
+[node name="TierIcon" parent="." instance=ExtResource("5_5j70n")]
+offset_top = -12.0
+offset_bottom = -2.0
+
 [node name="DragAndDrop" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("4_jx7uk")
 target = NodePath("..")
@@ -87,6 +93,11 @@ script = ExtResource("7_2wu3i")
 visuals = NodePath("../Visuals")
 outline_color = Color(0.83132, 0.38015562, 0.9081197, 1)
 outline_thickness = 2
+
+[node name="UnitAnimations" type="Node" parent="." node_paths=PackedStringArray("unit")]
+script = ExtResource("9_u5g62")
+unit = NodePath("..")
+metadata/_custom_type_script = "uid://snmdf4qx8qyo"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
