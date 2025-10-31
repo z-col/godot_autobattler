@@ -81,7 +81,7 @@ func get_all_units() -> Array[Unit]:
 	return unit_array
 
 
-func _on_unit_tree_exited(tile: Vector2i, unit: Unit) -> void:
+func _on_unit_tree_exited(unit: Unit, tile: Vector2i) -> void:
 	if unit.is_queued_for_deletion():
 		units[tile] = null
 		unit_grid_changed.emit()

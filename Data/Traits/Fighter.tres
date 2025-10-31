@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Trait" load_steps=3 format=3 uid="uid://t3k842gifp13"]
+
+[ext_resource type="Texture2D" uid="uid://wxl68hk8ly55" path="res://assets/sprites/traits/fighter.png" id="1_wtdet"]
+[ext_resource type="Script" uid="uid://cree7ecop7mim" path="res://Data/Traits/Trait.gd" id="1_xytfw"]
+
+[resource]
+script = ExtResource("1_xytfw")
+name = "Figher"
+icon = ExtResource("1_wtdet")
+levels = 2
+unit_requirements = Array[int]([2, 5])
+unit_modifiers = Array[PackedScene]([null, null])
+metadata/_custom_type_script = "uid://cree7ecop7mim"

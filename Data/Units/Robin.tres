@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="UnitsState" load_steps=2 format=3 uid="uid://b5lk1wyo4fkxn"]
+[gd_resource type="Resource" script_class="UnitsState" load_steps=5 format=3 uid="uid://b5lk1wyo4fkxn"]
 
 [ext_resource type="Script" uid="uid://cb22ym0865rew" path="res://Data/Units/UnitsState.gd" id="1_bs4mq"]
+[ext_resource type="Script" uid="uid://cree7ecop7mim" path="res://Data/Traits/Trait.gd" id="2_o35vn"]
+[ext_resource type="Resource" uid="uid://o4kl3bddxk7c" path="res://Data/Traits/Elf.tres" id="3_oql8d"]
+[ext_resource type="Resource" uid="uid://cne8jmj6ywn1x" path="res://Data/Traits/Ranger.tres" id="4_rbjfu"]
 
 [resource]
 script = ExtResource("1_bs4mq")
 name = "Robin"
+traits = Array[ExtResource("2_o35vn")]([ExtResource("3_oql8d"), ExtResource("4_rbjfu")])
 skin_coordinates = Vector2i(2, 0)
 metadata/_custom_type_script = "uid://cb22ym0865rew"

@@ -38,6 +38,7 @@ const RARITY_COLORS = {
 @export var rarity: Rarity ## 单位稀有度（枚举类型）。
 @export var gold_cost: int = 1 ## 单位基础价格。
 @export_range(1, 3) var tier: int = 1: set = _set_tier ## 单位星级（1~3星）。
+@export var traits: Array[Trait]
 @export var pool_count: int = 5 ## 单位在池中的数量。
 
 @export_category("Visuals")

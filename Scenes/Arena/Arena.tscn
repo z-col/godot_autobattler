@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dl6tr34sphqob"]
+[gd_scene load_steps=20 format=4 uid="uid://dl6tr34sphqob"]
 
 [ext_resource type="Script" uid="uid://3wm14l2l57j3" path="res://Scenes/Arena/Arena.gd" id="1_2fwkt"]
 [ext_resource type="TileSet" uid="uid://jn1pi6cfsdt5" path="res://Scenes/Arena/TileSet.tres" id="1_lh3uc"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c25sttp3j4nqv" path="res://Scenes/SellPortal/SellPortal.tscn" id="12_vjiyp"]
 [ext_resource type="Script" uid="uid://bcdvb661h0ut4" path="res://Components/UnitCombiner.gd" id="13_iyhve"]
 [ext_resource type="PackedScene" uid="uid://b3x30iydxfbv1" path="res://Scenes/Shop/Shop.tscn" id="14_iyhve"]
+[ext_resource type="PackedScene" uid="uid://d0ihx40sqqwcl" path="res://Scenes/TeamSizeUI/TeamSizeUi.tscn" id="15_dm7b8"]
+[ext_resource type="Resource" uid="uid://dsyfeq7hyv7xw" path="res://Data/Player/PlayerStats.tres" id="16_t32e4"]
 
 [sub_resource type="Curve" id="Curve_mugxw"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.22530864, 0.99500763), 0.0, 0.0, 0, 0, Vector2(0.8333333, 0.99999994), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -151,3 +153,13 @@ one_shot = true
 
 [node name="Shop" parent="UI" instance=ExtResource("14_iyhve")]
 unique_name_in_owner = true
+
+[node name="TeamSizeUI" parent="UI" node_paths=PackedStringArray("arena_grid") instance=ExtResource("15_dm7b8")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 14.0
+grow_horizontal = 2
+player_stats = ExtResource("16_t32e4")
+arena_grid = NodePath("../../GameArea/ArenaUnitGrid")

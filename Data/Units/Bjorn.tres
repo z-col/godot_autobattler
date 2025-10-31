@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="UnitsState" load_steps=2 format=3 uid="uid://ia7k5knsmpht"]
+[gd_resource type="Resource" script_class="UnitsState" load_steps=5 format=3 uid="uid://ia7k5knsmpht"]
 
 [ext_resource type="Script" uid="uid://cb22ym0865rew" path="res://Data/Units/UnitsState.gd" id="1_urb3h"]
+[ext_resource type="Script" uid="uid://cree7ecop7mim" path="res://Data/Traits/Trait.gd" id="2_xiu68"]
+[ext_resource type="Resource" uid="uid://t3k842gifp13" path="res://Data/Traits/Fighter.tres" id="3_xmja3"]
+[ext_resource type="Resource" uid="uid://h1ygcetktjx4" path="res://Data/Traits/Viking.tres" id="4_xmja3"]
 
 [resource]
 script = ExtResource("1_urb3h")
 name = "Bjorn"
 rarity = 1
 gold_cost = 2
+traits = Array[ExtResource("2_xiu68")]([ExtResource("3_xmja3"), ExtResource("4_xmja3")])
 skin_coordinates = Vector2i(1, 3)
 metadata/_custom_type_script = "uid://cb22ym0865rew"

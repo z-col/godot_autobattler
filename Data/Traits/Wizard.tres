@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Trait" load_steps=3 format=3 uid="uid://ddr55smsmlk5t"]
+
+[ext_resource type="Texture2D" uid="uid://bqakm8biv7pa" path="res://assets/sprites/traits/wizard.png" id="1_nhiuy"]
+[ext_resource type="Script" uid="uid://cree7ecop7mim" path="res://Data/Traits/Trait.gd" id="2_govpi"]
+
+[resource]
+script = ExtResource("2_govpi")
+name = "Wizard"
+icon = ExtResource("1_nhiuy")
+levels = 3
+unit_requirements = Array[int]([2, 4, 6])
+unit_modifiers = Array[PackedScene]([null, null, null])
+metadata/_custom_type_script = "uid://cree7ecop7mim"

@@ -21,26 +21,35 @@
 class_name UnitMover extends Node
 
 
+# 存储所有可用的 PlayArea 区域，用于单位的放置和移动
 @export var play_areas: Array[PlayArea]
 
 
+# 节点准备就绪时调用，为所有单位设置拖拽事件监听
 func _ready() -> void:
 	var nuits = get_tree().get_nodes_in_group("units")
 	for unit: Unit in nuits:
 		setup_unit(unit)
 
 
+# 为单位绑定拖拽相关的信号
+# @param unit: 要设置的单位实例
 func setup_unit(unit: Unit) -> void:
 	unit.drag_and_drop.drag_started.connect(_on_unit_drag_started.bind(unit))
 	unit.drag_and_drop.drag_canceled.connect(_on_unit_drag_canceled.bind(unit))
 	unit.drag_and_drop.dropped.connect(_on_unit_dropped.bind(unit))
 
 
+# 启用或禁用所有 PlayArea 的高亮显示
+# @param enabled: 是否启用高亮显示
 func _set_highlighter(enabled: bool) -> void:
 	for play_area: PlayArea in play_areas:
 		play_area.tile_highlighter.enabled = enabled
 
 
+# 根据全局坐标获取对应的 PlayArea 索引
+# @param global: 全局坐标位置
+# @return: 对应的 PlayArea 索引，如果不在任何区域内则返回 -1
 func _get_play_area_for_position(global: Vector2) -> int:
 	var dropped_area_index = -1
 
@@ -51,6 +60,9 @@ func _get_play_area_for_position(global: Vector2) -> int:
 
 	return dropped_area_index
 
+# 将单位重置到起始位置
+# @param starting_position: 起始位置坐标
+# @param unit: 要重置的单位
 func _reset_unit_to_starting_position(starting_position: Vector2, unit: Unit) -> void:
 	var i = _get_play_area_for_position(starting_position)
 	var tile = play_areas[i].get_tile_from_global(starting_position)
@@ -59,12 +71,18 @@ func _reset_unit_to_starting_position(starting_position: Vector2, unit: Unit) ->
 	play_areas[i].unit_grid.add_unit(tile, unit)
 
 
+# 将单位移动到指定的 PlayArea 和格子
+# @param unit: 要移动的单位
+# @param play_area: 目标 PlayArea
+# @param tile: 目标格子坐标
 func _move_unit(unit: Unit, play_area: PlayArea, tile: Vector2i) -> void:
 	play_area.unit_grid.add_unit(tile, unit)
 	unit.global_position = play_area.get_global_from_tile(tile) - Arena.HALF_CELL_SIZE
 	unit.reparent(play_area.unit_grid)
 
 
+# 处理单位拖拽开始时的逻辑
+# @param unit: 被拖拽的单位
 func _on_unit_drag_started(unit: Unit) -> void:
 	_set_highlighter(true)
 
@@ -73,6 +91,9 @@ func _on_unit_drag_started(unit: Unit) -> void:
 		var tile = play_areas[i].get_tile_from_global(unit.global_position)
 		play_areas[i].unit_grid.remove_unit(tile)
 
+# 处理单位拖拽取消时的逻辑
+# @param starting_position: 起始位置坐标
+# @param unit: 被拖拽的单位
 func _on_unit_drag_canceled(starting_position: Vector2, unit: Unit) -> void:
 	_set_highlighter(false)
 	_reset_unit_to_starting_position(starting_position, unit)

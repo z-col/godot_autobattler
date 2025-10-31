@@ -1,11 +1,15 @@
-[gd_resource type="Resource" script_class="UnitsState" load_steps=2 format=3 uid="uid://c7vbpjgq3nhmk"]
+[gd_resource type="Resource" script_class="UnitsState" load_steps=5 format=3 uid="uid://c7vbpjgq3nhmk"]
 
 [ext_resource type="Script" uid="uid://cb22ym0865rew" path="res://Data/Units/UnitsState.gd" id="1_62o3r"]
+[ext_resource type="Script" uid="uid://cree7ecop7mim" path="res://Data/Traits/Trait.gd" id="2_naoct"]
+[ext_resource type="Resource" uid="uid://t3k842gifp13" path="res://Data/Traits/Fighter.tres" id="3_yjoq2"]
+[ext_resource type="Resource" uid="uid://dwadhwva8ks6b" path="res://Data/Traits/Noble.tres" id="4_1vrd8"]
 
 [resource]
 script = ExtResource("1_62o3r")
 name = "Arthur"
 rarity = 2
 gold_cost = 4
+traits = Array[ExtResource("2_naoct")]([ExtResource("3_yjoq2"), ExtResource("4_1vrd8")])
 skin_coordinates = Vector2i(4, 2)
 metadata/_custom_type_script = "uid://cb22ym0865rew"
